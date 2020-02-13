@@ -66,10 +66,7 @@
         <ui:ImageTarget Image="{x:Null}" Accuracy="0.95" InitialScalingFactor="2.25" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEEAAAA7CAYAAAAkTufiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAITcAACE3ATNYn3oAAAJoSURBVGhD7ZlLLgRRFIbtgB2wA3bADtgBO7AEdsDUqE2MSIgRozYxk0h6xKhHjCSS9myv6/yVKul0DnX73v8UOudL/khTfevUV3UfdU0EJ7gEwSUILkFwCYJLEFyC4BIElyC4BMElCC5BcAnCr0l47R6E/tl6kcfjpfBwuFD8rH73dn1SHmlPoxJeLrfDU3sl9FpTobc1UR85Dse/dvfLFmxoRMLbVbu40+qFRgbfRzsW2Ero32Zf/HDQZdAuEzMJ7zfn4X5vTr2Q3KBdtM/CRAIKjO73qZH2WSLoEj56XXsBVeQ8OF8uXAnSV626wHfB+XLHCKqEp/ayWqh1nk9XywrSoEkouoFSYF36nc1i6quCz9pxdcnpFjQJmLq04uoyvDLEZ+24uuApTIUioZgNlMJiwpKApM4WFAnok1pRMWFK6Hc2ylZGgyLhbmdGLSomTAnFTJEARYJWUGyYEpCU6XLsJKS8ZLkEYewkPJ+tlS3F8+sSMJjhdbtK7rL7X0pg5+WiVVYVz9hJ+JdjAjspq8Y/MibMfyVrTGhNlhWNBkXC49GiXlREmLND6ksURQIGI62omDAlpG7NUyRgqXq3M60WVheWBJw/dYeJI0FIfRpYElKmxgqaBJDyNDAWS8VTkAFVAuZorUjrpKwNBqFKANjY0Aq1SupGyiB0CaCpXeecfcVBTCQAaxEsAcBMAshZP/yUnJlAw1QCwFoey2HtYkYN2mH9/3EQcwkVGMHvd2fVi6sLvpc7A/xEYxIqcCexRV/3dODvOM7izg/TuIS/iEsQXILgEgSXILgEwSUILkFwCYJLCCF8At9CWDdNqOHPAAAAAElFTkSuQmCC" />
       </ui:ClickImage.Image>
       <ui:ClickImage.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Welcome to Chrome - Google Chrome' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Welcome to Chrome - Google Chrome' /&gt;" TimeoutMS="240000">
           <ui:Target.WaitForReady>
             <InArgument x:TypeArguments="ui:WaitForReady" />
           </ui:Target.WaitForReady>
