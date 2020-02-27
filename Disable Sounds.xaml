@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Disable_Sounds" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="496,1781.33333333333" sap2010:WorkflowViewState.IdRef="Disable_Sounds_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Disable_Sounds" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="496,1731.55555555556" sap2010:WorkflowViewState.IdRef="Disable_Sounds_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -46,7 +46,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Disable_Sounds" sap:VirtualizedContainerService.HintSize="476,1721.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Disable_Sounds" sap:VirtualizedContainerService.HintSize="476,1671.55555555556" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -91,13 +91,13 @@
         </ActivityAction>
       </ui:OpenApplication.Body>
     </ui:OpenApplication>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'rundll32.exe  Sound'" sap:VirtualizedContainerService.HintSize="434.222222222222,863.555555555556" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="23adfd465561ab00b95fe179adbb4fb6" Selector="&lt;wnd app='rundll32.exe' cls='#32770' title='Sound' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'rundll32.exe  Sound'" sap:VirtualizedContainerService.HintSize="434.222222222222,813.777777777778" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="23adfd465561ab00b95fe179adbb4fb6" Selector="&lt;wnd app='rundll32.exe' cls='#32770' title='Sound' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.444444444444,716.888888888889" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400.444444444444,667.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -125,16 +125,15 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox'" sap:VirtualizedContainerService.HintSize="358.666666666667,134.666666666667" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="No Sounds">
+            <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox'" sap:VirtualizedContainerService.HintSize="358.666666666667,134.666666666667" sap2010:WorkflowViewState.IdRef="SelectItem_4" Item="No Sounds">
               <ui:SelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="4">
                   <x:String>No Sounds</x:String>
-                  <x:String>No Sounds (modified)</x:String>
                   <x:String>Windows Default</x:String>
                 </scg:List>
               </ui:SelectItem.Items>
               <ui:SelectItem.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="585f8bae1d02d849f097c6f942335606" Selector="&lt;wnd cls='#32770' title='Sounds' /&gt;&lt;wnd ctrlid='1100' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="30b0c2ca34251b46d6706fbd6d2b5620" Selector="&lt;wnd cls='#32770' title='Sounds' /&gt;&lt;wnd ctrlid='1100' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -144,9 +143,19 @@
                 </ui:Target>
               </ui:SelectItem.Target>
             </ui:SelectItem>
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'ComboBox'" sap:VirtualizedContainerService.HintSize="358.666666666667,156.444444444444" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="tab" KeyModifiers="None" SpecialKey="True">
-              <ui:SendHotkey.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c5b0a5c90cf9774371fded5fb44bb40c" Selector="&lt;wnd cls='#32770' title='Sounds' /&gt;&lt;wnd ctrlid='1100' /&gt;">
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'ComboBox'" sap:VirtualizedContainerService.HintSize="358.666666666667,106.666666666667" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="False">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="28b6a76cbd29138762f479c97e7cc70a" Selector="&lt;wnd cls='#32770' title='Sounds' /&gt;&lt;wnd ctrlid='1100' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -154,8 +163,8 @@
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
                 </ui:Target>
-              </ui:SendHotkey.Target>
-            </ui:SendHotkey>
+              </ui:Click.Target>
+            </ui:Click>
             <ui:Click DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="358.666666666667,106.666666666667" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
