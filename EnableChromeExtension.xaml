@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="EnableChromeExtension" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1241.33333333333,2488.88888888889" sap2010:WorkflowViewState.IdRef="EnableChromeExtension_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="EnableChromeExtension" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="910.666666666667,2878.22222222222" sap2010:WorkflowViewState.IdRef="EnableChromeExtension_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="21">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -22,10 +22,10 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -44,48 +44,99 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="EnableChromeExtension" sap:VirtualizedContainerService.HintSize="1251.55555555556,2424" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="EnableChromeExtension" sap:VirtualizedContainerService.HintSize="920.888888888889,2813.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1209.77777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Enabling Chrome Extension&quot;]" />
-    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1209.77777777778,2196.88888888889" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="879.111111111111,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Enabling Chrome Extension&quot;]" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="879.111111111111,2586.22222222222" sap2010:WorkflowViewState.IdRef="RetryScope_1">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1168,2019.55555555556" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="837.333333333333,2408.88888888889" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="extensionAddedMenuExists" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1126.22222222222,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Starting Chrome&quot;]" />
-            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" sap:VirtualizedContainerService.HintSize="1126.22222222222,87.5555555555556" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-            <Pick sap:VirtualizedContainerService.HintSize="1126.22222222222,1383.55555555556" sap2010:WorkflowViewState.IdRef="Pick_1">
-              <PickBranch sap:VirtualizedContainerService.HintSize="527.111111111111,1337.33333333333" sap2010:WorkflowViewState.IdRef="PickBranch_1">
-                <PickBranch.Trigger>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element" sap:VirtualizedContainerService.HintSize="333.777777777778,68.4444444444444" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
-                    <ui:WaitUiElementAppear.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Welcome to Chrome - Google Chrome' /&gt;" TimeoutMS="60000">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="795.555555555556,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Starting Chrome&quot;]" />
+            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" sap:VirtualizedContainerService.HintSize="795.555555555556,87.5555555555556" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="795.555555555556,712.888888888889" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="375.555555555556,445.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" Activate="True" DelayMS="100" DisplayName="Send Hotkey 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="333.777777777778,156.444444444444" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="f10" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                      <ui:SendHotkey.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f2b1501424138141a8c072410def4a61" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:SendHotkey.Target>
+                    </ui:SendHotkey>
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Send Hotkey 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="333.777777777778,156.444444444444" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="enter" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                      <ui:SendHotkey.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f2b1501424138141a8c072410def4a61" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:SendHotkey.Target>
+                    </ui:SendHotkey>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean">
+                  <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'menu item'" sap:VirtualizedContainerService.HintSize="333.777777777778,106.666666666667" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ea2725d174cc6cc372308ac326163f9b" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_2' idx='*' /&gt;&lt;ctrl name='New tab Ctrl+T' role='menu item' /&gt;" TimeoutMS="3000">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
                       </ui:Target>
-                    </ui:WaitUiElementAppear.Target>
-                  </ui:WaitUiElementAppear>
-                </PickBranch.Trigger>
-                <Sequence sap:VirtualizedContainerService.HintSize="477.333333333333,1067.11111111111" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                </ActivityFunc>
+              </ui:RetryScope.Condition>
+            </ui:RetryScope>
+            <ui:UiElementExists DisplayName="Element Exists" Exists="[extensionAddedMenuExists]" sap:VirtualizedContainerService.HintSize="795.555555555556,68.4444444444444" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_2' idx='*' /&gt;&lt;uia role='menu bar' /&gt;&lt;uia name='New extension added (UiPath Web Automation)' role='menu item' /&gt;" TimeoutMS="3000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[extensionAddedMenuExists]" sap:VirtualizedContainerService.HintSize="795.555555555556,911.555555555556" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,711.555555555556" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="435.555555555556,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Enabling extension&quot;]" />
-                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'chrome.exe New'" sap:VirtualizedContainerService.HintSize="435.555555555556,106.666666666667" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-                    <ui:ClickImage.CursorPosition>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;Enabling extension&quot;]" />
+                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'menu item'" sap:VirtualizedContainerService.HintSize="333.777777777778,106.666666666667" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
                           <InArgument x:TypeArguments="x:Int32" />
@@ -94,68 +145,9 @@
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:CursorPosition.OffsetY>
                       </ui:CursorPosition>
-                    </ui:ClickImage.CursorPosition>
-                    <ui:ClickImage.Image>
-                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.95" Profile="Basic" TargetImageBase64="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" />
-                    </ui:ClickImage.Image>
-                    <ui:ClickImage.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Welcome to Chrome - Google Chrome' /&gt;" TimeoutMS="60000">
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:ClickImage.Target>
-                  </ui:ClickImage>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.555555555556,277.333333333333" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.555555555556,199.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'menu item'" sap:VirtualizedContainerService.HintSize="333.777777777778,106.666666666667" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-                          <ui:Click.CursorPosition>
-                            <ui:CursorPosition Position="Center">
-                              <ui:CursorPosition.OffsetX>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:CursorPosition.OffsetX>
-                              <ui:CursorPosition.OffsetY>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:CursorPosition.OffsetY>
-                            </ui:CursorPosition>
-                          </ui:Click.CursorPosition>
-                          <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b834fa6ee08a92f0402d89291844ef1a" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_2' idx='*' /&gt;&lt;uia role='menu bar' /&gt;&lt;uia name='New extension added (UiPath Web Automation)' role='menu item' /&gt;">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
-                            </ui:Target>
-                          </ui:Click.Target>
-                        </ui:Click>
-                      </Sequence>
-                    </ui:CommentOut.Body>
-                  </ui:CommentOut>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="435.555555555556,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Clicking Enable extension&quot;]" />
-                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'chrome.exe &quot;UiPath'" sap:VirtualizedContainerService.HintSize="435.555555555556,106.666666666667" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT">
-                    <ui:ClickImage.CursorPosition>
-                      <ui:CursorPosition Position="Center">
-                        <ui:CursorPosition.OffsetX>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetX>
-                        <ui:CursorPosition.OffsetY>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetY>
-                      </ui:CursorPosition>
-                    </ui:ClickImage.CursorPosition>
-                    <ui:ClickImage.Image>
-                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIoAAAArCAYAAACnxxAvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATWSURBVHhe7Zw/TxtNEMbzOfwl3KWjS+kuHR2dO4oULpAiCpBoUiCkFFcgoRTISuMiEpWRKKCIkBssIb248OuQhLN9/oOIDx+W5n1mdw/Oh8/e1y6OmPlJK3lvb9dzM8/OLKDjDQmCBSIUwQoRimCFCEWwYqpQHkYj8jo9qv/7k/6p1aUtWeO4cnw5zrNIFApPblz/prbXpeEwMFeFZYLjyvHlOI9miCVRKKw0XkRYfjjOs2KdKBROS5JJXgf3wyHVGz9NbzKJQuEaJrweZsVbhCIoRCiCFSIUwQoRimCFCEWwQoQiWJGiUHq09+GGMtG23zNj/5/zfczf8cg1/TEuWljfpdLEwb+A4JaOSx26Gph+CqQulLXSLfX6vm6D+X+Bl75QfDo/dCl3OL/YE7n2aK1wQwcpJvH0hVK+M/3FSF8od1TaWSwrvmReoFBCh3t0tHtDWdzzdqdNVZN2GydNWsXu4lKVLbh0cHmvrmuhtOnoq0srGMtExsaFMqJepUV5s8YKr92f9AevPypDqLXQ8l/7sBhWnzVhU5NOlT3a1tWSp20292Y+tOichwe3VHJgP1/D93080c8a2lo61GPZzSYdu9oG/7JN6xtmnUKLqnxxiv3sA6fyhweIXGQeXNv+5tG6GV+D3b4eXYjUhfLk3Bvau+DrRigb7Lwh+V6HChjLl7UzetcoVQE7NaDqF9z3SWcR5Xzc51wggsGAqhBMhgPK1Szq6FqbchsIpBKHT6eYl3W6MWeOqIog5va7ShzU79I2grddGaJzR0efMHYIO75DNFseNfieZxllQMcQev6b2QhcPmBf8Tq01aVibUB+v0/OFmz4omSofFI4iR1GIvb7ly3Ksa8qmBsMyYUN3Od1Q6Hk8Dwuj2FTZTHvyNPLLEL6GSVyRvHVESXucN1/h8Awfr1Dzq5L7zfhXMwPy82z0qOcZsQRcbQSF8+Ltmcl67mIuT1mvzAgEI9TC7NRzG7Po3xsPjfeDHFbVX+3g2+FuD7jM7LEXrmHYJu14/are0NuqQhfKNuMXXrDAdN3aqa/AOkLJbH0jAtF9bGzObtsf9c7zi0ja8wjlDFHT8Ls7LOEpI21OfVz2SjWpwtlUpAmCuWxj0xw4ZGDrJUpIKv2cSlu/1gG1EJRGTdBKI/9BXhRGaU30Kk9USjmwQ9qSD34kbHI16NCgTNVOg/u6Bhng8xGm654iWjqrnA61qmbS4zvdql4FhfrkE7V/Bad9jnNcYr3UAp5DPYgiKuw+6qkv1+XHjPnsylXuK/IJQWlscGZgcshzjJ85pguFAOLke28xOeo/fj8ztj/VHpQXnjyMgtlLDUrZ00RCt3jgKl38tvNFpX4HBIVylaTHKRudQCOHBCjjuY1rspPB+IVzCnWWKAxogdRtNVdBBkBbyCLZSGgKusnwDOg/KyZcwgH8b263xxCvS45sF2VSHzfOs48j7ZOFArOK8YudX94EB2zPxg70PNzFsND+3IKRfibEKEIVohQBCtEKIIVIhTBChGKYIUIRbBChCJYMbdQ5AWw18NCL4DJK6Wvh4VeKVUvqf/4pRZgxQnLB8eV48txnvsldebhwfzbC6QlrmHSlqtxXNW/vUCcZzFVKIIQIkIRrBChCFaIUAQrRCiCFSIUwQoRimAB0X/kn2G3ypiH3AAAAABJRU5ErkJggg==" />
-                    </ui:ClickImage.Image>
-                    <ui:ClickImage.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd aaname='Another program on your computer added an extension that may cha*' app='chrome.exe' cls='Chrome_WidgetWin_1' /&gt;">
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b834fa6ee08a92f0402d89291844ef1a" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_2' idx='*' /&gt;&lt;uia role='menu bar' /&gt;&lt;uia name='New extension added (UiPath Web Automation)' role='menu item' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -163,43 +155,43 @@
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
                       </ui:Target>
-                    </ui:ClickImage.Target>
-                  </ui:ClickImage>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="435.555555555556,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Enable extension finished&quot;]" />
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;Clicking Enable extension&quot;]" />
+                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Enable Extension" sap:VirtualizedContainerService.HintSize="333.777777777778,68.4444444444444" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd aaname='Another program on your computer*' app='chrome.exe' cls='Chrome_WidgetWin_1' /&gt;&lt;ctrl name='Enable extension' role='push button' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;Enable extension finished&quot;]" />
                 </Sequence>
-              </PickBranch>
-              <PickBranch sap:VirtualizedContainerService.HintSize="425.333333333333,1337.33333333333" sap2010:WorkflowViewState.IdRef="PickBranch_2">
-                <PickBranch.Trigger>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'chrome.exe New'" sap:VirtualizedContainerService.HintSize="333.777777777778,106.666666666667" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
-                    <ui:WaitUiElementAppear.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="11efde7125bd197be0e059c3ef4197a4" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='New Tab - Google Chrome' /&gt;" TimeoutMS="60000">
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:WaitUiElementAppear.Target>
-                  </ui:WaitUiElementAppear>
-                </PickBranch.Trigger>
-                <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,801.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,761.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Enable extension in new tab&quot;]" />
-                  <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'chrome.exe New'" sap:VirtualizedContainerService.HintSize="333.777777777778,134.666666666667" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="chrome://extensions">
-                    <ui:TypeInto.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="9d6d3d227f5dbede1da631fbd8ec41f4" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='New Tab - Google Chrome' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:TypeInto.Target>
-                  </ui:TypeInto>
-                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="333.777777777778,118.222222222222" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[&quot;Enabling extension via extension menu&quot;]" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="333.777777777778,118.222222222222" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="le" KeyModifiers="None" SpecialKey="False">
                     <ui:SendHotkey.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='New Tab - Google Chrome' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -211,7 +203,8 @@
                       </ui:Target>
                     </ui:SendHotkey.Target>
                   </ui:SendHotkey>
-                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="333.777777777778,106.666666666667" sap2010:WorkflowViewState.IdRef="ClickImage_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_13" Message="[&quot;Looking for UiPath image&quot;]" />
+                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="333.777777777778,106.666666666667" sap2010:WorkflowViewState.IdRef="ClickImage_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
                     <ui:ClickImage.CursorPosition>
                       <ui:CursorPosition OffsetX="290" OffsetY="70" Position="BottomRight" />
                     </ui:ClickImage.CursorPosition>
@@ -229,12 +222,12 @@
                       </ui:Target>
                     </ui:ClickImage.Target>
                   </ui:ClickImage>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Enable extension in new tab finished&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;Enable extension finished&quot;]" />
                 </Sequence>
-              </PickBranch>
-            </Pick>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1126.22222222222,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Closing Chrome&quot;]" />
-            <ui:CloseApplication DisplayName="Close Application 'chrome.exe'" sap:VirtualizedContainerService.HintSize="1126.22222222222,106.666666666667" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+              </If.Else>
+            </If>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="795.555555555556,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Closing Chrome&quot;]" />
+            <ui:CloseApplication DisplayName="Close Application 'chrome.exe'" sap:VirtualizedContainerService.HintSize="795.555555555556,106.666666666667" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
               <ui:CloseApplication.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="adf0637d1a0f2a089ffb7d48cbfc869f" Selector="&lt;wnd app='chrome.exe' /&gt;">
                   <ui:Target.TimeoutMS>
